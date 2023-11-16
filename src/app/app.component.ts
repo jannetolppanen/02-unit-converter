@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '02-unit-converter';
+  // Määritellään toolbarin title tässä ja inputilla toolbarille
+  title = '02 Unit Converter';
 }
