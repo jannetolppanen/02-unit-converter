@@ -4,8 +4,8 @@
       >Select converter</mat-label
     >
     <select name="converterValue" formControlName="converterValue" matNativeControl required>
-      <option *ngFor="let converter of converters" value="{{ converter }}">
-        {{ converter }}
+      <option *ngFor="let item of conversionDefs" value="{{ item.name }}">
+        {{ item.name }}
       </option>
     </select>
   </mat-form-field>
