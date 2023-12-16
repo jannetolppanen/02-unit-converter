@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ConversionDef } from '../../shared/conversion-def.class';
 
 @Component({
   selector: 'app-converter',
@@ -9,10 +10,7 @@ import { FormGroup } from '@angular/forms';
 export class ConverterComponent implements OnInit {
   @Input() parentForm!: FormGroup;
   
-  converters: string[] = [
-    "Celcius to Fahrenheit",
-    "Fahrenheit to Celcius",
-  ]
+conversionDefs!: ConversionDef[]
 
   ngOnInit(): void {
     this.parentForm

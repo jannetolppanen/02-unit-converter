@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ConverterCategoryDef } from '../../shared/converter-category-def.class';
+import { ConversionEngineService } from '../../shared/conversion-engine.service';
 
 @Component({
   selector: 'app-category',
@@ -9,9 +11,15 @@ import { FormGroup } from '@angular/forms';
 export class CategoryComponent implements OnInit {
   @Input() parentForm!: FormGroup;
 
-  categories: string[] = ['Temperature', 'Weight', 'Distance', 'Currency'];
+  converterCategoryDefs!: ConverterCategoryDef[];
+
+  // categories: string[] = ['Temperature', 'Weight', 'Distance', 'Currency'];
+
+  constructor(private conversionEngineService: ConversionEngineService) {}
 
   ngOnInit(): void {
+    this.converterCategoryDefs = this.conversionEngineService.getconverterCategoryDefs()
+
     this.parentForm
       .get('categoryValue')
       ?.valueChanges.subscribe((value) => {
