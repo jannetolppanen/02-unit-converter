@@ -8,24 +8,24 @@ import { ConverterCategoryDef } from './converter-category-def.class';
 export class ConversionEngineService {
   // supported conversions
   weightDefs: ConversionDef[] = [
-    new ConversionDef('kgs to libs', 'kg', 'libs'),
-    new ConversionDef('libs to kgs', 'libs', 'kg'),
+    new ConversionDef('kgs to libs', 2.20462262, 0, 0, 'kg', 'libs'),
+    new ConversionDef('libs to kgs', 1/2.20462262, 0, 0, 'libs', 'kg'),
   ];
 
   temperatureDefs: ConversionDef[] = [
-    new ConversionDef('Celsius to Fahrenheit', '°C', 'F'),
-    new ConversionDef('Fahrenheit to Celsius', 'F', '°C'),
+    new ConversionDef('Celsius to Fahrenheit', 9/5, 0, 32, '°C', 'F'),
+    new ConversionDef('Fahrenheit to Celsius', 5/9, -32, 0, 'F', '°C'),
   ];
 
   distanceDefs: ConversionDef[] = [
-    new ConversionDef('km to miles', 'km', 'ml'),
-    new ConversionDef('miles to km', 'ml', 'km'),
-    new ConversionDef('meters to foots', 'm', 'ft'),
+    new ConversionDef('km to miles', 1/1.609344, 0, 0, 'km', 'ml'),
+    new ConversionDef('miles to km', 1.609344, 0, 0, 'ml', 'km'),
+    new ConversionDef('meters to feet', 3.2808399, 0, 0, 'm', 'ft'),
   ];
 
   currencyDefs: ConversionDef[] = [
-    new ConversionDef('€ to $', '€', '$'),
-    new ConversionDef('$ to €', '$', '€'),
+    new ConversionDef('€ to $', 1.08, 0, 0, '€', '$'),
+    new ConversionDef('$ to €', 1/1.08, 0, 0, '$', '€'),
   ];
 
   converterCategoryDefs: ConverterCategoryDef[] = [
