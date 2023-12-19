@@ -1,7 +1,7 @@
 export class ConversionDef {
   constructor(
     public name: string,
-    inUnit: string,
-    outUnit: string,
+    public inUnit: string,
+    public outUnit: string,
   ) {}
 }

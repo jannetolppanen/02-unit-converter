@@ -23,9 +23,15 @@ export class ConversionEngineService {
     new ConversionDef('meters to foots', 'm', 'ft'),
   ];
 
+  currencyDefs: ConversionDef[] = [
+    new ConversionDef('€ to $', '€', '$'),
+    new ConversionDef('$ to €', '$', '€'),
+  ];
+
   converterCategoryDefs: ConverterCategoryDef[] = [
     new ConverterCategoryDef('Weight', '', this.weightDefs),
     new ConverterCategoryDef('Temperature', '', this.temperatureDefs),
+    new ConverterCategoryDef('Currency', '', this.currencyDefs,),
     new ConverterCategoryDef('Distance', '', this.distanceDefs),
   ];
 
@@ -39,10 +45,37 @@ export class ConversionEngineService {
     for (let i = 0; this.converterCategoryDefs.length; i++) {
       if (name === this.converterCategoryDefs[i].name) return i;
     }
+    console.log('Category not found');
+    return -1;
+  }
+  findConversionIndex(catName: string, convName: string): number {
+    if (catName == '') return -1;
+
+    let catIdx = this.findCategoryIndex(catName);
+
+    if (catIdx === -1) return -1;
+
+    let conversionDefs = this.converterCategoryDefs[catIdx].conversions;
+
+    for (let i = 0; i < conversionDefs.length; i++) {
+      if (convName === conversionDefs[i].name) return i;
+    }
+    console.log('Conversion not found');
     return -1;
   }
   getConversionDefs(catName: string): ConversionDef[] {
     let idx = this.findCategoryIndex(catName);
     return this.converterCategoryDefs[idx].conversions;
+  }
+  getCurrentConversionDef(catName: string, convName: string): ConversionDef|null {
+    let catIdx = this.findCategoryIndex(catName);
+    let convIdx = this.findConversionIndex(catName, convName);
+    if(catIdx >= 0 && convIdx >= 0) {
+      console.log("getCurrentConversionDef: category and conversion found")
+      return this.converterCategoryDefs[catIdx].conversions[convIdx];
+    }
+    console.log("getCurrentConversionDef: category or conversion not found")
+    return null
+    
   }
 }

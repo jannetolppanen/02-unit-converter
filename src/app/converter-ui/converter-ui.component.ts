@@ -20,6 +20,9 @@ export class ConverterUiComponent implements OnInit {
     this.parentForm = this.fb.group({
       categoryValue: new FormControl(converterCategoryDefs[0].name),
       converterValue: new FormControl(converterCategoryDefs[0].conversions[0].name),
+      conversionInput: new FormControl(''),
+      conversionOutput: new FormControl(''),
+
     });
   }
   onSubmit() {
