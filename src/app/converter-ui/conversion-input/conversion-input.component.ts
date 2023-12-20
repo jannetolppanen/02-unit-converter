@@ -19,6 +19,7 @@ export class ConversionInputComponent implements OnInit {
     this.parentForm.get('categoryValue')?.valueChanges.subscribe((value) => {
       this.conversionInUnitText = 'Input';
       this.parentForm.get('conversionInput')?.setValue('');
+      
     });
 
     // conversion change detection
