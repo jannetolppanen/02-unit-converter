@@ -1,3 +1,12 @@
 #toolbar-title {
   margin: auto;
 }
+
+.toolbar-icon:link,
+.toolbar-icon:visited,
+.toolbar-icon:hover,
+.toolbar-icon:active,
+.toolbar-icon:focus {
+  color: inherit; 
+  outline: none; 
+}
