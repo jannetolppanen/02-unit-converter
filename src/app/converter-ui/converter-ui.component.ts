@@ -8,7 +8,6 @@ import { ConversionEngineService } from '../shared/conversion-engine.service';
   styleUrl: './converter-ui.component.css',
 })
 export class ConverterUiComponent implements OnInit {
-  // ! on häx
   parentForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -22,7 +21,6 @@ export class ConverterUiComponent implements OnInit {
       converterValue: new FormControl(converterCategoryDefs[0].conversions[0].name),
       conversionInput: new FormControl(''),
       conversionOutput: new FormControl(''),
-      icon: new FormControl(converterCategoryDefs[0].icon),
     });
   }
   onSubmit() {

@@ -41,6 +41,16 @@ export class ConversionEngineService {
     return this.converterCategoryDefs;
   }
 
+  // find ConverterCategoryDef index by name and return icon name
+  findIconName(name: string): string {
+    for (let i = 0; this.converterCategoryDefs.length; i++) {
+      if (name === this.converterCategoryDefs[i].name)
+        return this.converterCategoryDefs[i].icon;
+    }
+    console.log('Icon not found');
+    return '';
+  }
+
   findCategoryIndex(name: string) {
     for (let i = 0; this.converterCategoryDefs.length; i++) {
       if (name === this.converterCategoryDefs[i].name) return i;
