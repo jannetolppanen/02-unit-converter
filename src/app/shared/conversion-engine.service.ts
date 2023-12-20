@@ -29,10 +29,10 @@ export class ConversionEngineService {
   ];
 
   converterCategoryDefs: ConverterCategoryDef[] = [
-    new ConverterCategoryDef('Weight', '', this.weightDefs),
-    new ConverterCategoryDef('Temperature', '', this.temperatureDefs),
-    new ConverterCategoryDef('Currency', '', this.currencyDefs,),
-    new ConverterCategoryDef('Distance', '', this.distanceDefs),
+    new ConverterCategoryDef('Weight', 'scale', this.weightDefs),
+    new ConverterCategoryDef('Temperature', 'device_thermostat', this.temperatureDefs),
+    new ConverterCategoryDef('Currency', 'payments', this.currencyDefs,),
+    new ConverterCategoryDef('Distance', 'square_foot', this.distanceDefs),
   ];
 
   constructor() {}
