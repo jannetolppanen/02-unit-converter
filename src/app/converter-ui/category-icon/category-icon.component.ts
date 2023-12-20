@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-category-icon',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './category-icon.component.css'
 })
 export class CategoryIconComponent {
+  @Input() parentForm!: FormGroup;
   icon: string;
+
 
   constructor() {
     this.icon = 'straighten';
