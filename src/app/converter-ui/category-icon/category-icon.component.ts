@@ -14,5 +14,26 @@ export class CategoryIconComponent {
   constructor() {
     this.icon = 'straighten';
   }
+  ngOnInit(): void {
+    this.parentForm.get('categoryValue')?.valueChanges.subscribe((value) => {
+      switch (value) {
+        case 'Weight':
+          this.icon = 'scale';
+          break;
+        case 'Temperature':
+          this.icon = 'device_thermostat';
+          break;
+        case 'Currency':
+          this.icon = 'payments';
+          break;
+        case 'Distance':
+          this.icon = 'straighten';
+          break;
+        default:
+          this.icon = 'scale';
+          break;
+      }
+    });
+  }
 
 }
