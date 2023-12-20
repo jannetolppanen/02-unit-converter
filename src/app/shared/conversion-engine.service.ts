@@ -75,7 +75,15 @@ export class ConversionEngineService {
       return this.converterCategoryDefs[catIdx].conversions[convIdx];
     }
     console.log("getCurrentConversionDef: category or conversion not found")
-    return null
-    
+    return null    
+  }
+
+  convertValue(catName: string, convName: string, value: number): string {
+    let currentConverter = this.getCurrentConversionDef(catName, convName);
+    if(currentConverter != null) {
+      let outValue = ((value + currentConverter.preOffset) * currentConverter.coeff + currentConverter.postOffset).toFixed(4);
+      return outValue;
+    }
+    return "";
   }
 }
