@@ -24,6 +24,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { AboutComponent } from './about/about.component';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,7 @@ import { AboutComponent } from './about/about.component';
     MatInputModule,
     // FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule, MatCardModule, MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
