@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './category-icon.component.css'
 })
 export class CategoryIconComponent {
+  icon: string;
+
+  constructor() {
+    this.icon = 'straighten';
+  }
 
 }
