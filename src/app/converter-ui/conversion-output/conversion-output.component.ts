@@ -37,10 +37,11 @@ export class ConversionOutputComponent implements OnInit {
       }
     });
     // converter type change detection
-    // tähän voisi tehdä niin, että input ja output molemmat nollaantuu ku converter vaihtuu
+
     this.parentForm.get('converterValue')?.valueChanges.subscribe((value) => {
       let catName = this.parentForm.get('categoryValue')?.value;
       this.parentForm.get('conversionOutput')?.setValue('');
+      this.parentForm.get('conversionInput')?.setValue('');
     });
   }
 }
